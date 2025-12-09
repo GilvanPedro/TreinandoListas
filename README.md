@@ -8,12 +8,12 @@ inteligentes e estrutura totalmente orientada a objetos.
 
 ## ✨ Funcionalidades Principais
 
-✔ Adicionar veículos com marca, modelo, placa e ano;
-✔ Validação de placa Mercosul (LLLNLNN — ex: ABC1D23);
-✔ Verificação de duplicidade de placa;
-✔ Listagem organizada dos veículos cadastrados;
-✔ Menu interativo em loop;
-✔ Armazenamento interno usando ArrayList;
+    ✔ Adicionar veículos com marca, modelo, placa e ano;
+    ✔ Validação de placa Mercosul (LLLNLNN — ex: ABC1D23);
+    ✔ Verificação de duplicidade de placa;
+    ✔ Listagem organizada dos veículos cadastrados;
+    ✔ Menu interativo em loop;
+    ✔ Armazenamento interno usando ArrayList;
 
 ------------------------------------------------------------------------
 
