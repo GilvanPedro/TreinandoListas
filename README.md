@@ -1,104 +1,60 @@
-# 🚗 Lista de Veículos — Aplicação Java (Console)
+# Treinando Listas em Java
 
-Bem-vindo ao Lista de Veículos, um projeto desenvolvido em Java para
-gerenciamento simples de veículos através do console, com validações
-inteligentes e estrutura totalmente orientada a objetos.
+Este repositório contém dois projetos de console em Java, desenvolvidos para praticar a manipulação de listas e o uso de estruturas de controle de fluxo. Os projetos simulam cenários práticos para o gerenciamento de dados.
 
-------------------------------------------------------------------------
+## Projetos Incluídos
 
-## ✨ Funcionalidades Principais
+O repositório é composto por dois módulos principais, cada um focado em um tipo de lista e lógica de negócios diferente:
 
-    ✔ Adicionar veículos com marca, modelo, placa e ano;
-    ✔ Validação de placa Mercosul (LLLNLNN — ex: ABC1D23);
-    ✔ Verificação de duplicidade de placa;
-    ✔ Listagem organizada dos veículos cadastrados;
-    ✔ Menu interativo em loop;
-    ✔ Armazenamento interno usando ArrayList;
+1.  **ListaCompra**: Simula um sistema de controle de gastos. O usuário insere o limite de crédito e, em seguida, adiciona itens (descrição e valor) à lista de compras. O sistema verifica se o valor da compra excede o limite disponível.
+2.  **ListaVeiculos**: Simula um sistema de cadastro de veículos. O usuário pode adicionar veículos à lista, informando placa (com validação do padrão Mercosul), marca, modelo e ano de lançamento. O sistema permite a exibição dos veículos cadastrados.
 
-------------------------------------------------------------------------
+## Tecnologias Utilizadas
 
-## 🛠 Estrutura do Projeto
+*   **Linguagem**: Java
+*   **Gerenciador de Dependências**: Maven (estrutura de projeto padrão)
+*   **Estruturas de Dados**: `ArrayList` (implícito ou explícito) para gerenciamento das listas.
+*   **Entrada de Dados**: Classe `Scanner` para interação via console.
 
-    src/
-     └── br/com/ListaVeiculos/
-          ├── Main.java
-          ├── Controller/
-          │     └── VeiculoController.java
-          └── Entity/
-                └── Veiculo.java
+## Como Executar os Projetos
 
-------------------------------------------------------------------------
+Ambos os projetos são aplicações de console baseadas em Maven. Para executá-los, você precisará ter o **Java Development Kit (JDK)** e o **Maven** instalados em sua máquina.
 
-## 📋 Menu Principal
+### Pré-requisitos
 
-O sistema funciona em loop exibindo:
+*   [JDK 17 ou superior](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+*   [Apache Maven](https://maven.apache.org/download.cgi)
 
-    1 - Adicionar Veículo
-    2 - Exibir Veículos
-    3 - Sair
+### Passos para Execução
 
-------------------------------------------------------------------------
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/GilvanPedro/TreinandoListas.git
+    cd TreinandoListas
+    ```
 
-## 🔐 Validação da Placa (Padrão Mercosul)
+2.  **Execute o projeto `ListaCompra`:**
+    ```bash
+    cd ListaCompra
+    mvn clean install
+    mvn exec:java -Dexec.mainClass="br.com.ListaCompra.Main"
+    ```
 
-Formato aceito:
+3.  **Execute o projeto `ListaVeiculos`:**
+    ```bash
+    cd ../ListaVeiculos
+    mvn clean install
+    mvn exec:java -Dexec.mainClass="br.com.ListaVeiculos.Main"
+    ```
 
-    LLLNLNN
+## Estrutura do Código
 
-Exemplo válido:
+Cada projeto segue uma estrutura simples de MVC (Model-View-Controller) adaptada para aplicações de console:
 
-    ABC1D23
+*   **`Main.java`**: Contém o ponto de entrada da aplicação e a lógica de interação com o usuário (simulando a **View**).
+*   **`Controller`**: Contém a lógica de negócios para manipulação da lista (ex: `ListaController.java` e `VeiculoController.java`).
+*   **`Entity`**: Contém as classes que representam os objetos a serem armazenados na lista (ex: `Lista.java` e `Veiculo.java`, simulando o **Model**).
 
-Regex utilizada:
+## Licença
 
-    ^[A-Z]{3}[0-9][A-Z][0-9]{2}$
-
-------------------------------------------------------------------------
-
-## ❗ Verificação de Placa Duplicada
-
-Antes de cadastrar um veículo, o sistema verifica se ele já existe:
-
-    if (veiculo.getPlaca().equalsIgnoreCase(placa)) {
-        return true;
-    }
-
-------------------------------------------------------------------------
-
-## 📄 Exemplo de Saída – Listagem de Veículos
-
-    ========== VEÍCULOS ==========
-    Veículo 1: Placa: ABC1D23 | Marca: Honda | Modelo: Civic | Ano: 2020
-    Veículo 2: Placa: BRA2E19 | Marca: Toyota | Modelo: Corolla | Ano: 2019
-
-------------------------------------------------------------------------
-
-## ▶ Como Executar
-
-### 1️⃣ Compile:
-
-    javac Main.java
-
-### 2️⃣ Execute:
-
-    java Main
-
-------------------------------------------------------------------------
-
-## 💡 Melhorias Futuras
-
--   Persistência em arquivos CSV
--   Exclusão e edição de veículos
--   Interface gráfica com JavaFX ou Swing
--   Tratamento de exceções mais robusto
--   Sistema de cores no console
-
-------------------------------------------------------------------------
-
-## 🧑‍💻 Sobre o Projeto
-
-Este projeto foi criado para fins de estudo e prática de:
-- Java
-- Programação Orientada a Objetos
-- Validação de dados
-- Manipulação de listas
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
