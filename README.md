@@ -1,48 +1,51 @@
-# Treinando Listas em Java
+# 🚀 Treinando Listas em Java
 
-Este repositório é uma coleção de projetos em Java, meticulosamente desenvolvidos com o propósito de aprimorar a proficiência na **manipulação de listas** e na aplicação de **estruturas de controle de fluxo**. Os projetos contidos aqui simulam cenários práticos de gerenciamento de dados, servindo como um recurso didático e prático para desenvolvedores que buscam consolidar seus conhecimentos em Java.
+Este repositório é um conjunto de projetos didáticos em Java, cuidadosamente elaborados para o aprimoramento da proficiência na **manipulação de estruturas de dados do tipo lista** e na aplicação de **estruturas de controle de fluxo**. Cada módulo simula um cenário prático de gerenciamento de dados, oferecendo um ambiente de aprendizado prático e eficaz para desenvolvedores que buscam consolidar seus conhecimentos em Java.
 
-## Projetos Incluídos
+## 🛠️ Tecnologias Utilizadas
 
-O repositório é estruturado em três módulos principais, cada um dedicado a um caso de uso distinto, focando em diferentes aspectos da lógica de negócios e manipulação de coleções.
+| Categoria | Tecnologia | Versão Mínima |
+| :--- | :--- | :--- |
+| **Linguagem** | Java | 17+ |
+| **Build Tool** | Apache Maven | 3.x |
+| **Estrutura de Dados** | `java.util.ArrayList` | N/A |
+| **Interface Gráfica** | Swing (Nos módulos `AlunosNotas` e `OrganizarBiblioteca`) | N/A |
 
-| Projeto | Descrição | Funcionalidade Principal | Interface | Estrutura de Dados |
-| :--- | :--- | :--- | :--- | :--- |
-| **AlunosNotas** | Sistema de gerenciamento de alunos e notas. | Permite o cadastro, listagem e exclusão de alunos, além de calcular a média de 4 notas. | **Gráfica (GUI - Swing)** | `ArrayList` de objetos `Aluno`. |
-| **ListaCompra** | Simulação de um sistema de controle de gastos e limite de crédito. | Permite ao usuário inserir um limite de crédito inicial e adicionar itens de compra (descrição e valor), com validação em tempo real para verificar se o valor total excede o limite disponível. | Console | `ArrayList` de objetos de compra. |
-| **ListaVeiculos** | Simulação de um sistema de cadastro e gerenciamento de veículos. | Permite o cadastro de veículos, exigindo a inserção de placa (com validação do padrão Mercosul), marca, modelo e ano de lançamento. Oferece a funcionalidade de exibição de todos os veículos cadastrados. | Console | `ArrayList` de objetos de veículo. |
+## 📦 Módulos do Projeto
 
-## Tecnologias e Arquitetura
+O repositório é composto por quatro módulos independentes, cada um explorando diferentes aspectos da manipulação de listas e lógica de negócios.
 
-O desenvolvimento dos projetos utiliza o ecossistema padrão do Java, garantindo portabilidade e facilidade de execução.
+| Módulo | Descrição | Funcionalidades Chave | Interface |
+| :--- | :--- | :--- | :--- |
+| **AlunosNotas** | Sistema de gerenciamento de notas e cadastro de alunos. | Cadastro, listagem e exclusão de alunos; Cálculo da média de 4 notas. | **Gráfica (GUI)** |
+| **OrganizarBiblioteca** | Sistema de gerenciamento de livros para uma biblioteca. | Cadastro de livros (Título, Autor, Gênero); Listagem e ordenação dos livros cadastrados. | **Gráfica (GUI)** |
+| **ListaCompra** | Simulação de um sistema de controle de gastos. | Inserção de limite de crédito; Adição de itens de compra com validação de limite. | Console |
+| **ListaVeiculos** | Sistema de cadastro e gerenciamento de veículos. | Cadastro de veículos com validação de placa (padrão Mercosul); Listagem dos veículos cadastrados. | Console |
 
-*   **Linguagem de Programação**: Java.
-*   **Gerenciador de Dependências**: **Apache Maven**, utilizado para a gestão da estrutura do projeto e das dependências.
-*   **Estruturas de Dados**: O cerne dos projetos reside na utilização da classe `ArrayList` para o gerenciamento dinâmico das listas de dados.
-*   **Interação com o Usuário**: A entrada de dados e a interação são gerenciadas pela classe `Scanner` (para projetos de console) ou por componentes **Swing** (para o projeto GUI).
+### 📐 Arquitetura
 
-A arquitetura de cada projeto adota uma estrutura simplificada, inspirada no padrão **Model-View-Controller (MVC)**:
+Todos os projetos seguem uma estrutura simplificada, inspirada no padrão **Model-View-Controller (MVC)**, facilitando a separação de responsabilidades:
 
-*   **View**: Contém a lógica de interação e apresentação de dados ao usuário (seja via console ou GUI).
+*   **Model/Entity**: Classes que representam os objetos de dados (ex: `Aluno`, `Biblioteca`, `Veiculo`).
 *   **Controller**: Contém a **lógica de negócios** e as regras de manipulação das listas.
-*   **Model/Entity**: Representado pelas classes que definem os objetos a serem armazenados nas listas.
+*   **View**: Responsável pela interação e apresentação de dados ao usuário (Console ou GUI).
 
-## Como Executar os Projetos
+## ⚙️ Como Executar os Projetos
 
 Para compilar e executar as aplicações, é necessário ter o ambiente de desenvolvimento Java configurado.
 
 ### Pré-requisitos
 
-É imprescindível que as seguintes ferramentas estejam instaladas em sua máquina:
+Certifique-se de que as seguintes ferramentas estejam instaladas em sua máquina:
 
 1.  **Java Development Kit (JDK)**: Versão 17 ou superior.
 2.  **Apache Maven**: Ferramenta de automação de *build* e gerenciamento de projetos.
 
-### Passos para Execução
-
-Siga os passos abaixo para clonar o repositório e executar cada módulo:
+### Passos Detalhados para Execução
 
 1.  **Clone o Repositório:**
+    
+    Inicie clonando o repositório para sua máquina local:
     
     ```bash
     git clone https://github.com/GilvanPedro/TreinandoListas.git
@@ -50,6 +53,8 @@ Siga os passos abaixo para clonar o repositório e executar cada módulo:
     ```
     
 2.  **Execução do Módulo `AlunosNotas` (GUI):**
+    
+    Este módulo inicia uma interface gráfica (GUI) para interação:
     
     ```bash
     cd AlunosNotas
@@ -59,7 +64,21 @@ Siga os passos abaixo para clonar o repositório e executar cada módulo:
     mvn exec:java -Dexec.mainClass="br.com.AlunosNotas.Main"
     ```
     
-3.  **Execução do Módulo `ListaCompra` (Console):**
+3.  **Execução do Módulo `OrganizarBiblioteca` (GUI):**
+    
+    Este módulo também inicia uma interface gráfica (GUI) para interação:
+    
+    ```bash
+    cd ../OrganizarBiblioteca
+    # Compila e empacota o projeto
+    mvn clean install
+    # Executa a classe principal (inicia a interface gráfica)
+    mvn exec:java -Dexec.mainClass="br.com.Main"
+    ```
+    
+4.  **Execução do Módulo `ListaCompra` (Console):**
+    
+    Este módulo é executado diretamente no console:
     
     ```bash
     cd ../ListaCompra
@@ -69,7 +88,9 @@ Siga os passos abaixo para clonar o repositório e executar cada módulo:
     mvn exec:java -Dexec.mainClass="br.com.ListaCompra.Main"
     ```
     
-4.  **Execução do Módulo `ListaVeiculos` (Console):**
+5.  **Execução do Módulo `ListaVeiculos` (Console):**
+    
+    Este módulo também é executado diretamente no console:
     
     ```bash
     cd ../ListaVeiculos
@@ -79,8 +100,12 @@ Siga os passos abaixo para clonar o repositório e executar cada módulo:
     mvn exec:java -Dexec.mainClass="br.com.ListaVeiculos.Main"
     ```
 
-## Licença
+## 🤝 Contribuição
 
-Este projeto é distribuído sob a **Licença MIT**. Para obter detalhes completos sobre os termos de uso e permissões, consulte o arquivo `LICENSE` na raiz do repositório.
+Contribuições são bem-vindas! Se você deseja aprimorar algum módulo, corrigir um erro ou adicionar uma nova funcionalidade, sinta-se à vontade para abrir uma *Issue* ou enviar um *Pull Request*.
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **Licença MIT**. Você pode encontrar o texto completo da licença no arquivo `LICENSE` na raiz do repositório.
 
 ***
